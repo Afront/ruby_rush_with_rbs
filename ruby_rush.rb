@@ -1,3 +1,5 @@
+require_relative 'simulator'
+
 def show_usage
   puts "Usage:"
   puts "ruby ruby_rush.rb *seed* *num_prospectors* *num_turns*"
@@ -17,11 +19,10 @@ if valid_args
   seed = ARGV[0].to_i
   num_prospectors = ARGV[1].to_i
   num_turns = ARGV[2].to_i
-  puts "All is well. #{seed},#{num_prospectors},#{num_turns}"
-  
+
   # Run simulator.
-  #@simulator = Simulator.new(seed, num_prospectors, num_turns)
-  #@simulator.play
+  @simulator = Simulator.new(seed, num_prospectors, num_turns)
+  @simulator.play
 else
   show_usage
 end
