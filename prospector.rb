@@ -9,6 +9,10 @@ class Prospector
     @ruby_plural = "rubies"
     @fake_ruby_plural = "rubies"
     @days = 0
+    set_ruby_chart
+  end
+
+  def set_ruby_chart()
     # Set 2D array for ruby and fake ruby possiblities
     # Index 0 = ruby, Index 1 = fake ruby
     @ruby_chart = [[2,2],[3,3],[2,2],[1,4],[4,1],[3,3],[3,3]]
@@ -17,6 +21,8 @@ class Prospector
   # TODO: set up method for ruby hunting.
   def mine(city)
     city = city.to_i
+    success = 1
+    return nil if city > 6 || city < 0
     loop do
       @days += 1
       ruby = rand(@ruby_chart[city][0]).to_i
@@ -33,17 +39,28 @@ class Prospector
       else
         @fake_ruby_plural = "rubies"
       end
-      
+
       puts "\tFound #{ruby} #{@ruby_plural} and #{fake_ruby} fake #{@fake_ruby_plural} in #{@map[city][0]}."
       @ruby_total += ruby
       @fake_ruby_total += fake_ruby
       break if ruby.zero? && fake_ruby.zero?
     end
+    success
+  end
+
+  # Check valid seed.
+  def check_seed(seed)
+    thing = Integer(seed) rescue false
+  end
+
+  # Always return 1
+  def location_count
+    1
   end
 
   # Generates random number based on passed in seed.
   def gen_random_number(seed, range)
-    seed = seed.to_i
+    return nil if check_seed(seed) == false || range <= 0
     rng = Random.new(seed)
     num = rng.rand(range) + 1
     num
@@ -52,6 +69,7 @@ class Prospector
   # Go to next location pseudorandomly.
   def next_location(curr, seed)
     curr = curr.to_i
+    return nil if curr > 6 || curr < 0
     range = 1
     range = @map[curr].length - 1
     next_city = gen_random_number(seed, range).to_i
@@ -67,6 +85,8 @@ class Prospector
 
   # Show results of prospector's hunt.
   def show_results(p)
+    p = p.to_i
+    return nil if p <= 0
     puts "After #{@days} days, Rubyist #{p} found:"
     if @ruby_total == 1
       puts "\t#{@ruby_total} ruby."
@@ -82,5 +102,6 @@ class Prospector
     puts "Going home sad." if @ruby_total < 10 && @ruby_total > 0
     puts "Going home empty-handed." if @ruby_total == 0
     puts "\n"
+    1
   end
 end

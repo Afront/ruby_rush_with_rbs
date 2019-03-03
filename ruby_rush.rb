@@ -1,17 +1,12 @@
 require_relative 'simulator'
 
 def show_usage
-  puts "Usage:"
-  puts "ruby ruby_rush.rb *seed* *num_prospectors* *num_turns*"
-  puts "*seed* should be an integer\n*num_prospectors* should be a non-negative integer\n*num_turns* should be a non-negative integer"
+  puts "Usage:\nruby ruby_rush.rb *seed* *num_prospectors* *num_turns*\n*seed* should be an integer\n*num_prospectors* should be a non-negative integer\n*num_turns* should be a non-negative integer"
 end
 
 def validate_args(args)
-  args.count == 3 && Integer(args[0]) && Integer(args[1]) && Integer(args[2]) &&
-  args[1].to_i > 0 && args[2].to_i > 0 rescue false
+  args.count == 3 && Integer(args[0]) && Integer(args[1]) && Integer(args[2]) && args[1].to_i > 0 && args[2].to_i > 0 rescue false
 end
-
-# Begin execution
 
 # Check arguments to see if valid.
 valid_args = validate_args ARGV

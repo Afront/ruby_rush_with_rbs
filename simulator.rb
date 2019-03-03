@@ -44,7 +44,7 @@ class Simulator
     while(location_count < @num_turns && prospector_count > 0)
       #puts "Rubyist #{prospector_count} is hunting for rubies."
       jawn.mine(location_index)
-      location_count += 1
+      location_count += jawn.location_count
       location_index = jawn.next_location(location_index, @seed)
       success = location_count
     end

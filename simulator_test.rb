@@ -2,15 +2,12 @@ require 'minitest/autorun'
 require_relative 'simulator'
 # Class that tests simulator class
 class SimulatorTest < Minitest::Test
-  # UNIT TESTS FOR METHOD run(prospector_count,pete) in Simulator Class
+  # UNIT TESTS FOR METHOD run(prospector_count,jawn) in Simulator Class
   # Equivalence classes:
   # prospector_count = -INFINITY..-1 -> returns nil
-  # prospector_count = 1..INFINITY -> returns 1, snd tuns simulation as expected
-  # going to 5 locations
   # prospector_count = (not a number) -> returns nil
   # prospector_count = 0 -> returns nil
-  # pete = Object of type Prospector -> returns 1
-  # pete = Object not of type Prospector -> returns nil
+  # prospector_count = 1..INFINITY -> returns 1, and runs
 
   # Test that negative value for prospector_count returns nil
   # EDGE CASE
@@ -34,6 +31,7 @@ class SimulatorTest < Minitest::Test
 
 
   # Test that string value for prospector_count returns nil
+  # EDGE CASE
   def test_run_string
     sim = Simulator.new(1, 2, 1)
     sim.setup_map
@@ -91,6 +89,8 @@ class SimulatorTest < Minitest::Test
     assert_equal 5, sim.run(4, mock_prospector)
   end
 
+  # UNIT TEST FOR METHOD setup_map() in Simulator Class
+  # Test to see if array below is equal to 2D map created in Simulator class
   def test_setup_map
     map = [
       ['Enumerable Canyon', 'Duck Type Beach', 'Monkey Patch City'],

@@ -17,7 +17,6 @@ class MapLocationFinder
             elsif location == 'Dynamic Palisades'
               6
             end
-
     index
   end
 end
