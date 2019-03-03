@@ -15,6 +15,7 @@ class Simulator
     while prospector_count <= @num_prospectors
       jawn = Prospector.new(@map, MapLocationFinder.new, @num_turns)
       run(prospector_count, jawn)
+      jawn.show_results(prospector_count)
       prospector_count += 1
     end
   end
@@ -22,26 +23,31 @@ class Simulator
   # Set up map of potential paths
   def setup_map
     @map = [
-      ['Enumerable Canyon', 'Monkey Patch City', 'Duck Type Beach'],
+      ['Enumerable Canyon', 'Duck Type Beach', 'Monkey Patch City'],
+      ['Duck Type Beach', 'Matzburg', 'Enumerable Canyon'],
       ['Monkey Patch City', 'Nil Town', 'Matzburg'],
-      ['Duck Type Beach', 'Matzburg'],
-      ['Nil Town', 'Hash Crossing'],
-      ['Matzburg', 'Hash Crossing', 'Dynamic Palisades', 'Duck Type Beach'],
-      ['Hash Crossing', 'Dynamic Palisades'],
-      ['Dynamic Palisades']
+      ['Nil Town', 'Hash Crossing', 'Monkey Patch City'],
+      ['Matzburg', 'Hash Crossing', 'Dynamic Palisades', 'Duck Type Beach', 'Monkey Patch City'],
+      ['Hash Crossing', 'Dynamic Palisades', 'Matzburg', 'Nil Town'],
+      ['Dynamic Palisades', 'Hash Crossing']
     ]
   end
 
   # The ruby hunting begins!
   def run(prospector_count, jawn)
+    prospector_count = prospector_count.to_i
+    success = nil
     location_count = 0
     location_index = 0
     puts "Rubyist #{prospector_count} starting in #{@map[location_index][0]}."
 
     while(location_count < @num_turns && prospector_count > 0)
-      puts "Rubyist #{prospector_count} is hunting for rubies."
+      #puts "Rubyist #{prospector_count} is hunting for rubies."
+      jawn.mine(location_index)
       location_count += 1
       location_index = jawn.next_location(location_index, @seed)
+      success = location_count
     end
+    success
   end
 end

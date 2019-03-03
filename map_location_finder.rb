@@ -4,9 +4,9 @@ class MapLocationFinder
   def get_location_index(location)
     index = if location == 'Enumerable Canyon'
               0
-            elsif location == 'Monkey Patch City'
-              1
             elsif location == 'Duck Type Beach'
+              1
+            elsif location == 'Monkey Patch City'
               2
             elsif location == 'Nil Town'
               3
