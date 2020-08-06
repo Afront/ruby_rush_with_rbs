@@ -1,5 +1,5 @@
-require 'minitest/autorun'
-require_relative 'simulator'
+require "test_helper"
+
 # Class that tests simulator class
 class SimulatorTest < Minitest::Test
   # UNIT TESTS FOR METHOD run(prospector_count,jawn) in Simulator Class
@@ -103,5 +103,5 @@ class SimulatorTest < Minitest::Test
     ]
       sim = Simulator.new(1, 2, 1)
       assert_equal map, sim.setup_map
-    end
+  end
 end

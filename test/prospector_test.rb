@@ -1,5 +1,5 @@
-require 'minitest/autorun'
-require_relative 'prospector'
+require "test_helper"
+
 # Class that tests Prospector class
 class ProspectorTest < Minitest::Test
   # UNIT TESTS FOR METHOD gen_random_number(seed, range) in Prospector Class
