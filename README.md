@@ -1,10 +1,44 @@
-# CS1632 - Software Quality Assurance - D2
-Spring Semester 2019
+# RubyRush
 
-## Deliverable 2
+Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ruby_rush`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-For this assignment, you (NOT with a partner)  will write code and unit tests for Ruby Rush, a simulator of prospectors hunting for rubies.  Be careful though, for there are also fake rubies about!
+TODO: Delete this and the text above, and describe your gem
 
-Requirements for this program are in the `requirements.md` file in this directory.  Sample output is also provided for several runs of the program.  In case of ambiguity, please see the sample output as an example of what to display and how the system should work.  Note that the sample output shows specific routes for given seeds - you do NOT have to have your seeds create the exact same routes.  They are purely for demonstration purposes.
+## Installation
 
-This program must be written in Ruby and use minitest for the unit tests.  This program must use rubocop with the attached .rubocop.yml configuration and SimpleCov as described in class.
+Add this line to your application's Gemfile:
+
+```ruby
+gem 'ruby_rush'
+```
+
+And then execute:
+
+    $ bundle install
+
+Or install it yourself as:
+
+    $ gem install ruby_rush
+
+## Usage
+
+TODO: Write usage instructions here
+
+## Development
+
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+
+To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/ruby_rush. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/ruby_rush/blob/master/CODE_OF_CONDUCT.md).
+
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+## Code of Conduct
+
+Everyone interacting in the RubyRush project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/ruby_rush/blob/master/CODE_OF_CONDUCT.md).

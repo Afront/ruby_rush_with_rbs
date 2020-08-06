@@ -1,0 +1,21 @@
+class Prospector
+  public
+
+  def check_seed: (untyped seed) -> untyped
+
+  def gen_random_number: (untyped seed, untyped range) -> untyped
+
+  def location_count: () -> untyped
+
+  def mine: (untyped city) -> untyped
+
+  def next_location: (untyped curr, untyped seed) -> untyped
+
+  def set_ruby_chart: () -> untyped
+
+  def show_results: (untyped p) -> untyped
+
+  private
+
+  def initialize: (untyped map, untyped map_location_finder, untyped num_turns) -> untyped
+end
