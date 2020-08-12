@@ -1,5 +1,5 @@
 module RubyRush
-  def self.show_usage: () -> untyped
+  def self.show_usage: () -> void
 
-  def self.validate_args: (untyped args) -> untyped
+  def self.validate_args: (Array args) -> void
 end

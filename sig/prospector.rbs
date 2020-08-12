@@ -1,21 +1,21 @@
 class Prospector
   public
 
-  def check_seed: (untyped seed) -> untyped
+  def check_seed: (Integer seed) -> Integer # | FalseClass # false
 
-  def gen_random_number: (untyped seed, untyped range) -> untyped
+  def gen_random_number: (Integer seed, Integer range) -> Integer?
 
-  def location_count: () -> untyped
+  def location_count: () -> 1
 
-  def mine: (untyped city) -> untyped
+  def mine: (Integer city) -> Integer
 
-  def next_location: (untyped curr, untyped seed) -> untyped
+  def next_location: (Integer curr, Integer seed) -> Integer
 
-  def set_ruby_chart: () -> untyped
+  def set_ruby_chart: () -> void
 
-  def show_results: (untyped p) -> untyped
+  def show_results: (Integer p) -> 1
 
   private
 
-  def initialize: (untyped map, untyped map_location_finder, untyped num_turns) -> untyped
+  def initialize: (Array map, MapLocationFinder map_location_finder, Integer num_turns) -> void
 end
