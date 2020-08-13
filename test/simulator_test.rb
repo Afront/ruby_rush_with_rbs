@@ -47,7 +47,7 @@ class SimulatorTest < Minitest::Test
     def mock_prospector.location_count
       1
     end
-    assert_nil sim.run('HI', mock_prospector)
+    assert_raises(RBS::Test::Tester::TypeError) { sim.run('HI', mock_prospector) }
   end
 
   # Test that a value of zero for prospector_count returns nil

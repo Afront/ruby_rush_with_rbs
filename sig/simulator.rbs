@@ -1,0 +1,13 @@
+class RubyRush::Simulator
+  public
+
+  def play: () -> void
+
+  def run: (Integer prospector_count, Prospector jawn) -> Integer?
+
+  def setup_map: () -> void
+
+  private
+
+  def initialize: (Integer seed, Integer num_prospectors, Integer num_turns) -> void
+end

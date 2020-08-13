@@ -1,5 +1,5 @@
 class MapLocationFinder
   public
 
-  def get_location_index: (untyped location) -> untyped
+  def get_location_index: (String location) -> Integer
 end
