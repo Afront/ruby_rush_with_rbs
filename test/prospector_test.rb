@@ -45,7 +45,7 @@ class ProspectorTest < Minitest::Test
     assert_equal 1, jawn.gen_random_number(3, 1)
   end
 
-  # UNIT TESTS FOR METHOD mine(city) in Prospector Class
+  # UNIT TESTS FOR METHOD 開採(city) in Prospector Class
   # Equivalence classes:
   # city = -INFINITY..-1 -> returns nil
   # city = 0..6 -> beings mining correctly
@@ -53,29 +53,29 @@ class ProspectorTest < Minitest::Test
 
   # Tests that negative city index returns nil
   # EDGE CASE
-  def test_mine_negative
+  def test_開採_negative
     mock_map = Minitest::Mock.new('Mock Map')
     mock_map_location_finder = Minitest::Mock.new('Mock Map Location Finder')
     jawn = Prospector.new(mock_map, mock_map_location_finder,1 )
-    assert_nil jawn.mine(-1)
+    assert_nil jawn.開採(-1)
   end
 
   # Tests that valid city index returns 1
   # EDGE CASE
-  def test_mine_pass
+  def test_開採_pass
     mock_map = Minitest::Mock.new('Mock Map')
     mock_map_location_finder = Minitest::Mock.new('Mock Map Location Finder')
     jawn = Prospector.new(mock_map, mock_map_location_finder, 1)
-    assert_equal 1, jawn.mine(4)
+    assert_equal 1, jawn.開採(4)
   end
 
   # Tests that negative city index returns nil
   # EDGE CASE
-  def test_mine_invalid
+  def test_開採_invalid
     mock_map = Minitest::Mock.new('Mock Map')
     mock_map_location_finder = Minitest::Mock.new('Mock Map Location Finder')
     jawn = Prospector.new(mock_map, mock_map_location_finder, 1)
-    assert_nil jawn.mine(8)
+    assert_nil jawn.開採(8)
   end
 
   # UNIT TESTS FOR METHOD next_location(curr, seed) in Prospector Class
@@ -117,11 +117,11 @@ class ProspectorTest < Minitest::Test
   # SHOLD ALWAYS RETURN 1. This method keeps a count of prospector
 
   # Test to confirm 1 is returned when called
-  def test_location_count
+  def test_위치수
     mock_map = Minitest::Mock.new('Mock Map')
     mock_map_location_finder = Minitest::Mock.new('Mock Map Location Finder')
     jawn = Prospector.new(mock_map, mock_map_location_finder, 1)
-    assert_equal 1, jawn.location_count
+    assert_equal 1, jawn.위치수
   end
 
   # Test to confirm that 1 is returned at all times
@@ -130,7 +130,7 @@ class ProspectorTest < Minitest::Test
     mock_map = Minitest::Mock.new('Mock Map')
     mock_map_location_finder = Minitest::Mock.new('Mock Map Location Finder')
     jawn = Prospector.new(mock_map, mock_map_location_finder, 1)
-    80.times { count += jawn.location_count }
+    80.times { count += jawn.위치수 }
     assert_equal 80, count
   end
 

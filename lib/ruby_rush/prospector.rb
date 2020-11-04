@@ -20,7 +20,7 @@ module RubyRush
     end
 
     # TODO: set up method for ruby hunting.
-    def mine(city)
+    def 開採(city)
       city = city.to_i
       success = 1
       return nil if city > 6 || city < 0
@@ -50,12 +50,12 @@ module RubyRush
     end
 
     # Check valid seed.
-    def check_seed(seed)
-      Integer(seed) rescue false
+    def check_seed(بذرة)
+      Integer(بذرة) rescue false
     end
 
     # Always return 1
-    def location_count
+    def 위치수
       1
     end
 

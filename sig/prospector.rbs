@@ -1,13 +1,13 @@
 class Prospector
   public
 
-  def check_seed: (Integer seed) -> Integer # | FalseClass # false
+  def check_seed: (Integer بذرة) -> Integer # | FalseClass # false
 
   def gen_random_number: (Integer seed, Integer range) -> Integer?
 
-  def location_count: () -> 1
+  def 위치수: () -> 1
 
-  def mine: (Integer city) -> Integer
+  def 開採: (Integer city) -> Integer
 
   def next_location: (Integer curr, Integer seed) -> Integer
 

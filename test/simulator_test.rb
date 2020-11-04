@@ -2,7 +2,7 @@ require "test_helper"
 
 # Class that tests simulator class
 class SimulatorTest < Minitest::Test
-  # UNIT TESTS FOR METHOD run(prospector_count,jawn) in Simulator Class
+  # UNIT TESTS FOR METHOD 実行する(prospector_count,jawn) in Simulator Class
   # Equivalence classes:
   # prospector_count = -INFINITY..-1 -> returns nil
   # prospector_count = (not a number) -> returns nil
@@ -11,11 +11,11 @@ class SimulatorTest < Minitest::Test
 
   # Test that negative value for prospector_count returns nil
   # EDGE CASE
-  def test_run_negative
+  def test_実行する_negative
     sim = Simulator.new(1, 2,1 )
     sim.setup_map
     mock_prospector = Minitest::Mock.new('Mock Prospector')
-    def mock_prospector.mine(_param)
+    def mock_prospector.開採(_param)
       1
     end
 
@@ -26,17 +26,17 @@ class SimulatorTest < Minitest::Test
     def mock_prospector.location_count
       1
     end
-    assert_nil sim.run(-1, mock_prospector)
+    assert_nil sim.実行する(-1, mock_prospector)
   end
 
 
   # Test that string value for prospector_count returns nil
   # EDGE CASE
-  def test_run_string
+  def test_実行する_string
     sim = Simulator.new(1, 2, 1)
     sim.setup_map
     mock_prospector = Minitest::Mock.new('Mock Prospector')
-    def mock_prospector.mine(_param)
+    def mock_prospector.開採(_param)
       1
     end
 
@@ -47,16 +47,19 @@ class SimulatorTest < Minitest::Test
     def mock_prospector.location_count
       1
     end
-    assert_raises(RBS::Test::Tester::TypeError) { sim.run('HI', mock_prospector) }
+
+    if defined?(RBS::Test)
+      assert_raises(RBS::Test::Tester::TypeError) { sim.実行する('HI', mock_prospector) }
+    end
   end
 
   # Test that a value of zero for prospector_count returns nil
   # EDGE CASE
-  def test_run_zero
+  def test_実行する_zero
     sim = Simulator.new(1, 2, 1)
     sim.setup_map
     mock_prospector = Minitest::Mock.new('Mock Prospector')
-    def mock_prospector.mine(_param)
+    def mock_prospector.開採(_param)
       1
     end
 
@@ -67,15 +70,15 @@ class SimulatorTest < Minitest::Test
     def mock_prospector.location_count
       1
     end
-    assert_nil sim.run(0, mock_prospector)
+    assert_nil sim.実行する(0, mock_prospector)
   end
 
   # Test that a non-negative prospector count reaches 5 different locations
-  def test_run_passes
+  def test_実行する_passes
     sim = Simulator.new(1, 2, 5)
     sim.setup_map
     mock_prospector = Minitest::Mock.new('Mock Prospector')
-    def mock_prospector.mine(_param)
+    def mock_prospector.開採(_param)
       1
     end
 
@@ -86,7 +89,7 @@ class SimulatorTest < Minitest::Test
     def mock_prospector.location_count
       1
     end
-    assert_equal 5, sim.run(4, mock_prospector)
+    assert_equal 5, sim.実行する(4, mock_prospector)
   end
 
   # UNIT TEST FOR METHOD setup_map() in Simulator Class

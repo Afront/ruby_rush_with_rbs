@@ -221,7 +221,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
         };
     }
 
-    // Determine the next and previous members in a group.
+    // Deter開採 the next and previous members in a group.
     function getIndex(increment) {
         var
             max = $related.length,

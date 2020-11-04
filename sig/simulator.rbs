@@ -3,7 +3,7 @@ class RubyRush::Simulator
 
   def play: () -> void
 
-  def run: (Integer prospector_count, Prospector jawn) -> Integer?
+  def 実行する: (Integer prospector_count, Prospector jawn) -> Integer?
 
   def setup_map: () -> void
 

@@ -542,7 +542,7 @@
   },
   "Unit Tests": {
     "coverage": {
-      "/Users/katsu/Documents/Coding/gsoc/projects/CS1632-D2/test/prospector_test.rb": {
+      "/Users/katsu/Documents/Coding/gsoc/projects/intl_ruby_rush_with_rbs/test/prospector_test.rb": {
         "lines": [
           1,
           null,
@@ -735,7 +735,7 @@
           null
         ]
       },
-      "/Users/katsu/Documents/Coding/gsoc/projects/CS1632-D2/test/ruby_rush_test.rb": {
+      "/Users/katsu/Documents/Coding/gsoc/projects/intl_ruby_rush_with_rbs/test/ruby_rush_test.rb": {
         "lines": [
           1,
           null,
@@ -750,7 +750,7 @@
           null
         ]
       },
-      "/Users/katsu/Documents/Coding/gsoc/projects/CS1632-D2/test/simulator_test.rb": {
+      "/Users/katsu/Documents/Coding/gsoc/projects/intl_ruby_rush_with_rbs/test/simulator_test.rb": {
         "lines": [
           1,
           null,
@@ -801,7 +801,10 @@
           1,
           0,
           null,
-          2,
+          null,
+          1,
+          0,
+          null,
           null,
           null,
           null,
@@ -862,6 +865,6 @@
         ]
       }
     },
-    "timestamp": 1597214447
+    "timestamp": 1604518139
   }
 }
